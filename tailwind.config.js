@@ -33,3 +33,10 @@ module.exports = {
   plugins: [],
 };
 // https://www.npmjs.com/package/tailwind-scrollbar
+// https://blog.logrocket.com/10-best-tailwind-css-component-template-collections/
+// https://tailwindui.com/
+// https://tailwindcomponents.com/
+// https://tailwind-elements.com/
+// https://flowbite.com/docs/getting-started/introduction/
+// https://daisyui.com/
+// https://headlessui.com/

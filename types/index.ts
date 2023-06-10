@@ -38,6 +38,16 @@ export interface FilterProps {
   fuel: string;
   limit: number;
 }
+
+export interface OptionProps {
+  title: string;
+  value: string;
+}
+export interface CustomFilterProps {
+  title: string;
+  options: OptionProps[];
+}
+
 // interface specifies how a structure should look like, what variables and values it should have
 // https://stackoverflow.com/questions/37233735/interfaces-vs-types-in-typescript
 // https://thisthat.dev/d-ts-vs-ts/

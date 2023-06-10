@@ -1,4 +1,4 @@
-import { CarProps } from "@/types";
+import { CarProps, FilterProps } from "@/types";
 
 export const calculateCarRent = (city_mpg: number, year: number) => {
   const basePricePerDay = 50; // Base rental price per day in dollars
@@ -43,13 +43,14 @@ export const deleteSearchParams = (type: string) => {
   return newPathname;
 };
 
-export async function fetchCars() {
+export async function fetchCars(filters: FilterProps) {
+  const { fuel, limit, manufacturer, model, year } = filters;
   const headers = {
     "X-RapidAPI-Key": process.env.RAPID_API_KEY!,
     "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
   };
   const response = await fetch(
-    `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=q3`,
+    `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&model=${model}&year=${year}&fuel_type=${fuel}&limit=${limit}`,
     {
       headers,
     }
@@ -58,6 +59,7 @@ export async function fetchCars() {
   return result;
 }
 
+// https://www.imagin.studio/car-image-api
 export const generateCarImageUrl = (car: CarProps, angle?: string) => {
   const url = new URL("https://cdn.imagin.studio/getimage");
   const { make, year, model } = car;

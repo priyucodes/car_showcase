@@ -47,7 +47,14 @@ export interface CustomFilterProps {
   title: string;
   options: OptionProps[];
 }
+export interface ShowMoreProps {
+  pageNumber: number;
+  isNext: boolean;
+}
 
 // interface specifies how a structure should look like, what variables and values it should have
 // https://stackoverflow.com/questions/37233735/interfaces-vs-types-in-typescript
 // https://thisthat.dev/d-ts-vs-ts/
+
+// String() or `${}`  to convert to string
+// + or Number() for number
